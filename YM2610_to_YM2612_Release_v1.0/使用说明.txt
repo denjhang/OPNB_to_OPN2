@@ -1,0 +1,48 @@
+YM2610 到 YM2612 转换器 v1.0
+================================
+
+快速开始
+--------
+
+1. 提取 ADPCM 音频：
+   bin\vgm2wav_adpcm_only.exe input.vgm adpcm.wav
+
+2. 转换为 YM2612 VGM：
+   bin\vgm_converter.exe input.vgm adpcm.wav output.vgm
+
+示例
+----
+
+转换 Illusion.vgm：
+
+  bin\vgm2wav_adpcm_only.exe Illusion.vgm Illusion_ADPCM.wav
+  bin\vgm_converter.exe Illusion.vgm Illusion_ADPCM.wav Illusion_YM2612.vgm
+
+工具说明
+--------
+
+vgm2wav_adpcm_only.exe - 使用 libvgm 提取纯 ADPCM 音频
+vgm_converter.exe      - 主转换器（FM + ADPCM as DAC）
+vgm_converter_fm_only.exe - 仅转换 FM 通道
+batch_converter.exe    - 批量转换工具（支持 ZIP/VGZ）
+
+技术细节
+--------
+
+- FM 音量降低为 1/8（避免削波）
+- ADPCM 通过 libvgm 渲染（确保准确性）
+- 自动设置 DAC 立体声输出
+- 保留循环点和 GD3 标签
+
+文件夹结构
+----------
+
+bin/    - 可执行文件
+src/    - 源代码
+docs/   - 详细文档
+libvgm/ - libvgm 库源码
+
+更多信息请查看 README.md
+
+版本: 1.0
+日期: 2026-02-04
