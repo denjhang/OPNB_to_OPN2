@@ -1,0 +1,48 @@
+=== YM2610 to YM2612 Converter v2.0 ===
+快速开始指南
+
+【单文件转换】
+
+1. 提取 ADPCM 音频:
+   bin\vgm2wav_adpcm_only.exe input.vgm adpcm.wav
+
+2. 转换为 YM2612:
+   bin\vgm_converter.exe input.vgm adpcm.wav output.vgm
+
+【批量转换】
+
+使用批量转换脚本:
+   scripts\convert_batch_fixed.sh
+
+【示例】
+
+查看 examples/ 文件夹:
+   - input/Illusion.vgm (原始YM2610)
+   - output/Illusion_YM2612.vgm (转换后YM2612)
+
+【编译】
+
+mkdir build
+cd build
+cmake ..
+cmake --build .
+
+【文档】
+
+- README.md - 完整说明
+- docs/RELEASE_NOTES_v2.0.md - 发布说明
+- CHANGELOG.md - 版本历史
+
+【设置】
+
+- 采样率: 22.05kHz (硬件兼容)
+- PCM 音量: 150%
+- FM 音量: 1/6
+- 自动采样率转换: 启用
+
+【支持】
+
+问题反馈: https://github.com/your-repo/issues
+
+版本: 2.0
+日期: 2026-02-04
