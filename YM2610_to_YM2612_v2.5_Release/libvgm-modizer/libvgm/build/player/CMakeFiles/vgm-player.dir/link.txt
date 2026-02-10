@@ -1,0 +1,2 @@
+/mingw64/bin/ar.exe qc ../bin/libvgm-player.a "CMakeFiles/vgm-player.dir/dblk_compr.c.o" "CMakeFiles/vgm-player.dir/helper.c.o" "CMakeFiles/vgm-player.dir/playerbase.cpp.o" "CMakeFiles/vgm-player.dir/droplayer.cpp.o" "CMakeFiles/vgm-player.dir/gymplayer.cpp.o" "CMakeFiles/vgm-player.dir/s98player.cpp.o" "CMakeFiles/vgm-player.dir/vgmplayer_cmdhandler.cpp.o" "CMakeFiles/vgm-player.dir/vgmplayer.cpp.o" "CMakeFiles/vgm-player.dir/playera.cpp.o"
+/mingw64/bin/ranlib.exe ../bin/libvgm-player.a

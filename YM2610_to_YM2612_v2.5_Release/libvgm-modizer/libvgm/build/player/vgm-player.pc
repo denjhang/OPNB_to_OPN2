@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: LibVGM Player
+Description: LibVGM file playback library
+Version: 0.1
+Requires: 
+Requires.private: vgm-emu vgm-utils
+Cflags: -I${includedir} 
+Libs: -L${libdir} -lvgm-player
+Libs.private: -lm

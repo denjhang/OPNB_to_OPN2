@@ -1,0 +1,2 @@
+/mingw64/bin/ar.exe qc ../bin/libvgm-utils.a "CMakeFiles/vgm-utils.dir/DataLoader.c.o" "CMakeFiles/vgm-utils.dir/FileLoader.c.o" "CMakeFiles/vgm-utils.dir/MemoryLoader.c.o" "CMakeFiles/vgm-utils.dir/OSMutex_POSIX.c.o" "CMakeFiles/vgm-utils.dir/OSSignal_POSIX.c.o" "CMakeFiles/vgm-utils.dir/OSThread_POSIX.c.o" "CMakeFiles/vgm-utils.dir/StrUtils-CPConv_Win.c.o"
+/mingw64/bin/ranlib.exe ../bin/libvgm-utils.a

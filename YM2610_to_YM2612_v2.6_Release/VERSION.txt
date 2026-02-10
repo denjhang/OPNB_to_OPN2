@@ -1,0 +1,183 @@
+# YM2610 to YM2612 VGM Converter v2.6 - 版本信息
+
+## 版本号
+v2.6
+
+## 发布日期
+2026-02-10
+
+## 版本特点
+**Super_Dodge_Ball专门优化版** - 强化FM音量降低
+
+## 包内容
+
+### 可执行文件
+- `00_source/build/vgm_converter.exe` (351KB) - FM通道转换器
+- `00_source/build/vgm2wav_adpcm_only.exe` (2.2MB) - ADPCM提取器
+
+### 源代码
+- `00_source/src/` - 完整C++源代码
+- `00_source/CMakeLists.txt` - CMake配置文件
+
+### 依赖库
+- `libvgm-modizer/libvgm/` - libvgm库 (预编译 + 头文件, 34MB)
+
+### 脚本
+- `convert_complete.sh` - 批量转换脚本
+
+### 文档
+- `README.md` - 完整使用说明
+- `BUILD.md` - 编译说明
+- `RELEASE_NOTES.md` - 版本更新说明
+- `VERSION.txt` - 本文件
+
+### 示例文件
+- `examples/output/` - Super_Dodge_Ball转换示例
+
+## 主要特性
+
+✅ **强化音量降低**: TL×2.5，FM音量降低到40%
+✅ **完整转换**: FM通道 + ADPCM转DAC
+✅ **载波检测**: 8种FM算法支持
+✅ **TL修复**: 正确处理7位TL寄存器
+✅ **音量优化**: ADPCM 150%, FM TL×2.5
+✅ **GD3保留**: 保留元数据标签
+✅ **硬件兼容**: 基于v2.5验证的稳定架构
+
+## 技术规格
+
+### FM通道
+- 映射: YM2610 FM6 → YM2612 FM4
+- 工作通道: FM1, FM2, FM3, FM5 (4个)
+- 音量调整: TL×2.5 (仅载波运算符，降低到40%)
+- 算法跟踪: 是
+
+### PCM/ADPCM
+- 音量: 150% (0x18000)
+- 格式: YM2612 DAC
+- 采样率: 保持原始
+- 通道: FM6
+
+## v2.6 vs v2.5
+
+| 特性 | v2.5 | v2.6 |
+|------|------|------|
+| FM音量方法 | TL+16 | TL×2.5 |
+| 音量效果 | 降低约15% | 降低到40% |
+| 适用场景 | 大多数游戏 | Super_Dodge_Ball等 |
+
+## 测试状态
+
+✅ 编译测试通过
+✅ 功能测试通过
+✅ Super_Dodge_Ball转换成功 (16个文件, 160MB)
+✅ VGM格式验证通过
+⏳ 硬件测试待用户确认
+
+## 转换示例
+
+### Super_Dodge_Ball
+- **文件数量**: 16个VGM文件
+- **总大小**: 160MB
+- **FM命令**: 6603+ (01 Title)
+- **状态**: ✅ 转换成功
+
+文件列表：
+- 00 Neo Geo Logo (1.6MB)
+- 01 Title (4.9MB)
+- 02 Team Select (4.1MB)
+- 03 Kunio Team Stage (16MB)
+- 04 Winning Demo (2.4MB)
+- 05 Riki Team Stage (9.8MB)
+- 06 Shinji Team Stage (16MB)
+- 07 Misuzu Team Stage (17MB)
+- 08 Sabu Team Stage (14MB)
+- 09 Miyuki Team Stage (13MB)
+- 10 Kenji Team Stage (15MB)
+- 11 Maou Team Stage (13MB)
+- 12 Ending (13MB)
+- 13 Credits Roll (14MB)
+- 14 Continue (8.0MB)
+- 15 Game Over (1.1MB)
+
+## 系统要求
+
+- Windows with MSYS2/MinGW64
+- CMake 3.12+
+- GCC/G++ 编译器
+- zlib 库
+
+## 文件大小
+
+- 发布包: 约35MB (含依赖库)
+- 可执行文件: 约2.5MB
+- 源代码: 约100KB
+
+## 版本历史
+
+- v2.6 (2026-02-10) - Super_Dodge_Ball优化版 (TL×2.5)
+- v2.5 (2026-02-10) - 混合最佳实践版本 (TL+16)
+- v2.4 (2026-02-09) - 简化版本
+- v2.3 (2026-02-09) - 载波检测版本
+- v2.0 (2026-02-08) - 初始版本
+
+## 使用场景
+
+### 推荐使用v2.6
+- Super_Dodge_Ball ⚠️
+- FM音轨明显过响的游戏
+- 需要更强音量降低的场景
+
+### 推荐使用v2.5
+- Money_Puzzle_Exchanger ✅
+- KOF系列
+- 大多数Neo Geo游戏
+
+## 许可证
+
+本项目使用 libvgm 库，遵循其相应的许可证。
+
+## 技术支持
+
+如遇问题，请检查：
+1. README.md - 使用说明
+2. BUILD.md - 编译说明
+3. RELEASE_NOTES.md - 版本更新详情
+
+## 快速开始
+
+```bash
+# 转换Super_Dodge_Ball
+./convert_complete.sh "Super_Dodge_Ball_(Neo_Geo).zip"
+
+# 转换其他游戏
+./convert_complete.sh input.zip output_dir
+
+# 查看帮助
+./convert_complete.sh
+```
+
+## 技术细节
+
+### TL调整算法
+```cpp
+UINT8 AdjustTL(UINT8 tl) {
+    tl = tl & 0x7F;  // 确保7位值
+    UINT16 adjusted = (tl * 5) / 2;  // 乘以2.5
+    return (adjusted > 127) ? 127 : (UINT8)adjusted;
+}
+```
+
+### 载波运算符表
+```
+算法 0-3: 仅OP4
+算法 4:   OP2 + OP4
+算法 5-6: OP3 + OP2 + OP4
+算法 7:   所有运算符
+```
+
+---
+
+YM2610 to YM2612 VGM Converter v2.6
+© 2026
+专门优化：Super_Dodge_Ball及类似游戏

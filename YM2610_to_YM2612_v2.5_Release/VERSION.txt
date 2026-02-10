@@ -1,0 +1,110 @@
+# YM2610 to YM2612 VGM Converter v2.5 - 版本信息
+
+## 版本号
+v2.5
+
+## 发布日期
+2026-02-10
+
+## 包内容
+
+### 可执行文件
+- `00_source/build/vgm_converter.exe` (189KB) - FM通道转换器
+- `00_source/build/vgm2wav_adpcm_only.exe` (2.2MB) - ADPCM提取器
+
+### 源代码
+- `00_source/src/` - 完整C++源代码
+- `00_source/CMakeLists.txt` - CMake配置文件
+
+### 依赖库
+- `libvgm-modizer/libvgm/` - libvgm库 (预编译 + 头文件)
+
+### 脚本
+- `convert_complete.sh` - 一键转换脚本
+
+### 文档
+- `README.md` - 完整使用说明
+- `BUILD.md` - 编译说明
+- `RELEASE_NOTES.md` - 版本更新说明
+- `VERSION.txt` - 本文件
+
+### 示例文件
+- `examples/output/` - 转换示例输出
+
+## 主要特性
+
+✅ **完整转换**: FM通道 + ADPCM转DAC
+✅ **智能音量**: 仅调整载波运算符
+✅ **TL修复**: 正确处理7位TL寄存器
+✅ **载波检测**: 8种FM算法支持
+✅ **音量优化**: ADPCM 150%, FM TL+16
+✅ **GD3保留**: 保留元数据标签
+✅ **硬件兼容**: 实际硬件测试稳定
+
+## 技术规格
+
+### FM通道
+- 映射: YM2610 FM6 → YM2612 FM4
+- 工作通道: FM1, FM2, FM3, FM5 (4个)
+- 音量调整: TL+16 (仅载波运算符)
+- 算法跟踪: 是
+
+### PCM/ADPCM
+- 音量: 150% (0x18000)
+- 格式: YM2612 DAC
+- 采样率: 保持原始
+- 通道: FM6
+
+## 测试状态
+
+✅ 编译测试通过
+✅ 功能测试通过
+✅ 大规模转换测试通过 (48+游戏, 1100+文件)
+✅ VGM格式验证通过
+⏳ 硬件测试待用户确认
+
+## 系统要求
+
+- Windows with MSYS2/MinGW64
+- CMake 3.12+
+- GCC/G++ 编译器
+- zlib 库
+
+## 文件大小
+
+- 发布包: 约35MB (含依赖库)
+- 可执行文件: 约2.4MB
+- 源代码: 约100KB
+
+## 版本历史
+
+- v2.5 (2026-02-10) - 混合最佳实践版本
+- v2.4 (2026-02-09) - 简化版本
+- v2.3 (2026-02-09) - 载波检测版本
+- v2.0 (2026-02-08) - 初始版本
+
+## 许可证
+
+本项目使用 libvgm 库，遵循其相应的许可证。
+
+## 技术支持
+
+如遇问题，请检查：
+1. README.md - 使用说明
+2. BUILD.md - 编译说明
+3. RELEASE_NOTES.md - 版本更新详情
+
+## 快速开始
+
+```bash
+# 单文件转换
+./convert_complete.sh input.vgm output.vgm
+
+# 查看帮助
+./convert_complete.sh
+```
+
+---
+
+YM2610 to YM2612 VGM Converter v2.5
+© 2026

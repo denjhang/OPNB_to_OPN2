@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: LibVGM Audio
+Description: LibVGM audio output library
+Version: 0.1
+Requires: vgm-utils
+Requires.private: 
+Cflags: -I${includedir} -DAUDDRV_WAVEWRITE -DAUDDRV_WINMM -DAUDDRV_DSOUND
+Libs: -L${libdir} -lvgm-audio
+Libs.private: -lwinmm -ldsound -luuid

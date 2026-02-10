@@ -1,0 +1,2 @@
+/mingw64/bin/ar.exe qc ../bin/libvgm-audio.a "CMakeFiles/vgm-audio.dir/AudioStream.c.o" "CMakeFiles/vgm-audio.dir/AudDrv_WaveWriter.c.o" "CMakeFiles/vgm-audio.dir/AudDrv_WinMM.c.o" "CMakeFiles/vgm-audio.dir/AudDrv_DSound.cpp.o"
+/mingw64/bin/ranlib.exe ../bin/libvgm-audio.a

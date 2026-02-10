@@ -1,0 +1,31 @@
+utils/CMakeFiles/vgm-utils.dir/OSSignal_POSIX.c.o: \
+ D:/working/vscode-projects/modizer-libs/libvgm-modizer/libvgm/utils/OSSignal_POSIX.c \
+ D:/msys64/mingw64/include/stdlib.h D:/msys64/mingw64/include/corecrt.h \
+ D:/msys64/mingw64/include/_mingw.h \
+ D:/msys64/mingw64/include/_mingw_mac.h \
+ D:/msys64/mingw64/include/_mingw_secapi.h \
+ D:/msys64/mingw64/include/vadefs.h \
+ D:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+ D:/msys64/mingw64/include/corecrt_wstdlib.h \
+ D:/msys64/mingw64/include/limits.h D:/msys64/mingw64/include/crtdefs.h \
+ D:/msys64/mingw64/include/sec_api/stdlib_s.h \
+ D:/msys64/mingw64/include/malloc.h \
+ D:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+ D:/msys64/mingw64/include/errno.h D:/msys64/mingw64/include/stddef.h \
+ D:/msys64/mingw64/include/pthread.h \
+ D:/msys64/mingw64/include/sys/types.h \
+ D:/msys64/mingw64/include/_mingw_off_t.h \
+ D:/msys64/mingw64/include/process.h \
+ D:/msys64/mingw64/include/corecrt_startup.h \
+ D:/msys64/mingw64/include/signal.h \
+ D:/msys64/mingw64/include/pthread_signal.h \
+ D:/msys64/mingw64/include/time.h D:/msys64/mingw64/include/sys/timeb.h \
+ D:/msys64/mingw64/include/sec_api/sys/timeb_s.h \
+ D:/msys64/mingw64/include/_timeval.h \
+ D:/msys64/mingw64/include/pthread_time.h \
+ D:/msys64/mingw64/include/pthread_compat.h \
+ D:/msys64/mingw64/include/sched.h \
+ D:/msys64/mingw64/include/pthread_unistd.h \
+ D:/working/vscode-projects/modizer-libs/libvgm-modizer/libvgm/stdtype.h \
+ D:/msys64/mingw64/include/stdint.h \
+ D:/working/vscode-projects/modizer-libs/libvgm-modizer/libvgm/utils/OSSignal.h

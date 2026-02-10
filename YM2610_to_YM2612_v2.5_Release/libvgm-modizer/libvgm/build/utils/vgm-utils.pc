@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: LibVGM Utils
+Description: LibVGM utility library
+Version: 0.1
+Requires: 
+Requires.private: zlib
+Cflags: -I${includedir} 
+Libs: -L${libdir} -lvgm-utils
+Libs.private: 

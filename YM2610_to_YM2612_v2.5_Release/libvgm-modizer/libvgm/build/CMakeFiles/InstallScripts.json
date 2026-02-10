@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/d/working/vscode-projects/modizer-libs/libvgm-modizer/libvgm/build/cmake_install.cmake",
+		"/d/working/vscode-projects/modizer-libs/libvgm-modizer/libvgm/build/utils/cmake_install.cmake",
+		"/d/working/vscode-projects/modizer-libs/libvgm-modizer/libvgm/build/audio/cmake_install.cmake",
+		"/d/working/vscode-projects/modizer-libs/libvgm-modizer/libvgm/build/emu/cmake_install.cmake",
+		"/d/working/vscode-projects/modizer-libs/libvgm-modizer/libvgm/build/player/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
